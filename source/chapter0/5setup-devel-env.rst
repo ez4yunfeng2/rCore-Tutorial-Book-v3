@@ -301,4 +301,31 @@ GDB 调试支持
 
 之后，可以按下 ``Ctrl+]`` 来退出串口终端。
 
+
+
+在 Nezha-D1 平台上运行
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+首先安装 XFEL 烧录工具 
+
+- `XFEL 工具 <https://github.com/xboot/xfel>`_
+
+.. code-block:: bash
+
+   sudo apt install libusb-1.0-0-dev
+   cd xfel
+   make
+   sudo make install
+
+其次是将 MicroSD 卡 插入 PC 来将文件系统镜像拷贝上去（与K210大致相同）。
+
+随后，配置 Nezha-D1 开发板
+
+- `Nezha 开发板介绍 <https://d1.docs.aw-ol.com/>`_
+
+最后，我们将 MicroSD 插入 Nezha-D1 开发板，再将 Nezha-D1 开发板连接到 PC (按住fel再上电)，然后进入 ``os`` 目录 ``make run BOARD=d1 SBI=opensbi`` 
+在 Nezha-D1 开发板上跑 rCore Tutorial 。 
+
+.. image:: d1-final.gif
+
 到这里，恭喜你完成了实验环境的配置，可以开始阅读教程的正文部分了！
